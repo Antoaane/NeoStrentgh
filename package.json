@@ -4,15 +4,23 @@
   "private": true,
   "scripts": {
     "dev": "vite",
+    "tailwind": "npx tailwindcss -i ./src/assets/styles/tailwind/components.css -o ./src/assets/styles/tailwind/output.css --watch --minify",
+    "watch": "concurrently \"npx tailwindcss -i ./src/assets/styles/tailwind/components.css -o ./src/assets/styles/tailwind/output.css --watch --minify\" \"sass --watch ./src/assets/styles/sass/input.scss ./src/assets/styles/sass/output.css\" \"vite\"",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "gsap": "^3.12.2",
+    "sass": "^1.69.5",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.4.0",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.0.1",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
     "vite": "^4.4.11"
   }
 }
