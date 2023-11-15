@@ -15,17 +15,25 @@ body {
     left: -50vw;
     transform: rotate(-$rotation);
 
-    #cover1, #cover2 {
+    #cover1, #cover2, #cover1bis, #cover2bis {
         width: 100%;
         height: 50%;
     }
 
     #cover1 {
-        background-color: rgb(255, 119, 119);
+        background-color: $primary;
     }
 
     #cover2 {
-        background-color: rgb(200, 255, 0);
+        background-color: $primary;
+    }
+
+    #cover1bis {
+        background-color: white;
+    }
+
+    #cover2bis {
+        background-color: white;
     }
 
     .ns-icon {

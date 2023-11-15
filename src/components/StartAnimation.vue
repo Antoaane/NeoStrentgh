@@ -1,6 +1,7 @@
 <script setup>
     import { onMounted } from "vue";
     import NsIcon from "./icons/NsIcon.vue";
+    import NsIconGlow from "./icons/NsIconGlow.vue";
     import { gsap } from "gsap";
 
     onMounted(() => {
@@ -14,19 +15,37 @@
             ease: "expo.inOut",
         }).play();
 
-        gsap.to( cover1, {
+        gsap.fromTo("#cover1", { y: "0.1%" },
+        {
+            duration: 1,
+            delay: 1.1,
+            y: "-100%",
+            ease: "expo.inOut",
+        }).play();
+
+        gsap.fromTo("#cover2", { y: "-0.1%" },
+        {
+            duration: 1,
+            delay: 1.1,
+            y: "100%",
+            ease: "expo.inOut",
+        }).play();
+
+        gsap.fromTo("#cover1bis", { y: "0.1%" },
+        {
             duration: 1,
             delay: 1,
             y: "-100%",
             ease: "expo.inOut",
-        }).play();;
+        }).play();
 
-        gsap.to( cover2, {
+        gsap.fromTo("#cover2bis", { y: "-0.1%" },
+        {
             duration: 1,
             delay: 1,
             y: "100%",
             ease: "expo.inOut",
-        }).play();;
+        }).play();
     });
 
 </script>
@@ -35,6 +54,10 @@
     <div class="start-animation-container">
         <div id="cover1"></div>
         <div id="cover2"></div>
+    </div>
+    <div class="start-animation-container">
+        <div id="cover1bis"></div>
+        <div id="cover2bis"></div>
         <NsIcon class="ns-icon" />
     </div>
     
